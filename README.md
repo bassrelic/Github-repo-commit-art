@@ -7,7 +7,7 @@ Did you know that you can specify the commit dates in Git?
 I did not!
 Seeing that i did not commit anything in a long time on the commit statistics i hatched a plan.
 These commit statistics look like a dotmatrix dont they?
-![There is something missing here!](doc\img\empty_commit_statistics.PNG?raw=true "Empty statistics")
+![There is something missing here!](doc/img/empty_commit_statistics.PNG?raw=true "Empty statistics")
 Let us draw on them!
 
 ## How Do I Use This?
@@ -32,7 +32,7 @@ Type
 `python commit_using_ui.py`
 
 The following UI will show up:
-![There is something missing here!](doc\img\Empty_ui.PNG?raw=true "Empty UI")
+![There is something missing here!](doc/img/Empty_ui.PNG?raw=true "Empty UI")
 
 Klick on the buttons representing the days you want to commit on.
 *Take a look at the terminal, you will see which date you have selected here!*
@@ -40,14 +40,14 @@ Klick on the buttons representing the days you want to commit on.
 After you are done selecting the days you want to commit on simply click push.
 *This is the button on the bottom left of the screen.*
 
-![There is something missing here!](doc\img\Testing_ui.PNG?raw=true "Testing written in UI")
+![There is something missing here!](doc/img/Testing_ui.PNG?raw=true "Testing written in UI")
 
 The selected dates will be committed and pushed.
 *This might take a few moments, you can see the progress in your terminal.*
 
 Take a look at your profile and enjoy.
 
-![There is something missing here!](doc\img\GitHub_test.PNG?raw=true "Testing as commits on GitHub")
+![There is something missing here!](doc/img/GitHub_test.PNG?raw=true "Testing as commits on GitHub")
 
 ##### Following are the dates used for testing so far.
 2021-03-15 00:00:00
