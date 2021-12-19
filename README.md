@@ -47,7 +47,7 @@ The selected dates will be committed and pushed.
 
 Take a look at your profile and enjoy.
 
-![There is something missing here!](doc/img/GitHub_test.PNG?raw=true "Testing as commits on GitHub")
+![There is something missing here!](doc/img/Github_test.PNG?raw=true "Testing as commits on GitHub")
 
 ##### Following are the dates used for testing so far.
 2021-03-15 00:00:00
