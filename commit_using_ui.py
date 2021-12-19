@@ -47,8 +47,8 @@ class MyWindow(QMainWindow):
         label = Label(f'{month}')
         self.layout.addWidget(label, 0, 0)
 
-        for row in range(2, self.days): 
-           for column in range(0, self.weeks):
+        for row in range(2, self.rows): 
+           for column in range(0, self.cols):
                 button_date = my_date + timedelta(row - 1 + column * 7 - 1)
 
                 if button_date <= today:
