@@ -1,9 +1,11 @@
-"""This module creates a ui with buttons, clicking the buttons lets you select on which dates to commit.
-Pressing the push button (bottom left) will cause commits and a push."""
+"""This module creates a ui with buttons, clicking the buttons lets you select on which
+ dates to commit. Pressing the push button (bottom left) will cause commits and a push."""
 import sys
+import re
 import os
 from datetime import datetime, timedelta
 from functools import partial
+import argparse
 from PyQt5.Qt import QApplication, QMainWindow, QPushButton, QWidget, QLabel, QGridLayout, QSize
 
 
@@ -34,7 +36,7 @@ class Label(QLabel):
 
 class MyWindow(QMainWindow):
     """This class is used to define the mian window of this application."""
-    def __init__(self):
+    def __init__(self, date):
         super().__init__()
 
         self.rows = 9
@@ -49,7 +51,7 @@ class MyWindow(QMainWindow):
         self.layout = QGridLayout(central_widget)
 
         today = datetime.today()
-        my_date = datetime.strptime(str.rstrip("2020-12-20"), '%Y-%m-%d')
+        my_date = datetime.strptime(str.rstrip(date), '%Y-%m-%d')
         month = my_date.strftime('%b')
         label = Label(f'{month}')
         self.layout.addWidget(label, 0, 0)
@@ -89,15 +91,17 @@ class MyWindow(QMainWindow):
         return color_return
 
     def on_clicked(self, name, button):
-        """This method prints the selected date for reference and checks if the date is already choosen.
-        Depending if it was choosen previously, the color of the button is adjusted."""
+        """This method prints the selected date for reference and checks if the date is
+        already choosen. Depending if it was choosen previously, the color of the button
+        is adjusted."""
         print(name)
         color = self.check_for_date_in_list(name)
         button.setStyleSheet(f"""background-color: {color}""")
 
     def on_clicked_send(self):
-        """This method sorts the selected days, adds them to the readme for later reference and causes commits for every
-        date. When all dates have ben committed, the changes are pushed."""
+        """This method sorts the selected days, adds them to the readme for later
+        reference and causes commits for every date. When all dates have ben committed,
+        the changes are pushed."""
         self.selected_days.sort()
         print(self.selected_days)
 
@@ -112,8 +116,22 @@ class MyWindow(QMainWindow):
         os.system("git push")
 
 if __name__ == '__main__':
+    date=""
+    parser = argparse.ArgumentParser("commit_using_ui.py")
+    parser.add_argument("date",
+        help="The first date shown on your contribution matrix using the form yyyy-mm-dd.",
+        metavar=date)
+    args = parser.parse_args()
+    r = re.compile("\\d{4}-\\d{2}-\\d{2}")
+
+    if r.match(args.date) is None:
+        print("Supplied Starting Date does not match the form yyy-mm-dd. Aborting!")
+        sys.exit()
+
+    print("Startig Date: " + args.date)
+
     app = QApplication(sys.argv)
-    w = MyWindow()
+    w = MyWindow(args.date)
     w.setWindowTitle('GitHub Art by Pixel')
     w.show()
     sys.exit(app.exec_())
