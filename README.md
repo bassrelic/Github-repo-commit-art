@@ -29,7 +29,9 @@ As for now, you need to define the date shown on your statistics in the top left
 
 ### Run the Code
 Type 
-`python commit_using_ui.py`
+`python commit_using_ui.py <date>`
+
+Date must be supplied in the form yyyy-mm-dd and represent the first date in your contributions matrix.
 
 The following UI will show up:
 ![There is something missing here!](doc/img/Empty_ui.PNG?raw=true "Empty UI")
@@ -177,3 +179,7 @@ Take a look at your profile and enjoy.
 2022-06-21 00:00:00
 2022-06-22 00:00:00
 2022-06-23 00:00:00
+2022-08-01 00:00:00
+2022-08-02 00:00:00
+2022-08-03 00:00:00
+2022-08-05 00:00:00
