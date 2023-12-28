@@ -11,7 +11,7 @@ These commit statistics look like a dotmatrix dont they?
 Let us draw on them!
 
 ## How Do I Use This?
-This code is tested with **python 3.9.1**. Other versions might work but i can not guarentee this.
+This code is tested with **python 3.9.1** and **Python 3.12.1**. Other versions might work but i can not guarentee this.
 
 ### Fork This Repository
 Fork this repository by clicking the fork button on GitHub.
