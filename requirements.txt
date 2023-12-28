@@ -64,7 +64,7 @@ typing-extensions==4.0.1
     #   -r requirements.in
     #   astroid
     #   pylint
-wheel==0.37.0
+wheel==0.38.0
     # via pip-tools
 wrapt==1.13.3
     # via
@@ -74,3 +74,4 @@ wrapt==1.13.3
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
