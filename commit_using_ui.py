@@ -19,7 +19,8 @@ class PushButton(QPushButton):
 
         self.setText(text)
         self.setMaximumSize(QSize(20, 20))
-        self.setContentsMargins(10,10,10,10)
+        self.setContentsMargins(10, 10, 10, 10)
+
 
 # pylint: disable=too-few-public-methods
 class Label(QLabel):
@@ -31,11 +32,11 @@ class Label(QLabel):
 
         self.setText(text)
         self.setMaximumSize(QSize(20, 20))
-        self.setContentsMargins(10,10,10,10)
+        self.setContentsMargins(10, 10, 10, 10)
 
 
 class MyWindow(QMainWindow):
-    """This class is used to define the mian window of this application."""
+    """This class is used to define the main window of this application."""
     def __init__(self, date):
         super().__init__()
 
@@ -115,12 +116,13 @@ class MyWindow(QMainWindow):
 
         os.system("git push")
 
+
 if __name__ == '__main__':
-    date=""
+    date = ""
     parser = argparse.ArgumentParser("commit_using_ui.py")
     parser.add_argument("date",
-        help="The first date shown on your contribution matrix using the form yyyy-mm-dd.",
-        metavar=date)
+                        help="The first date shown on your contribution matrix using the form yyyy-mm-dd.",
+                        metavar=date)
     args = parser.parse_args()
     r = re.compile("\\d{4}-\\d{2}-\\d{2}")
 
